@@ -3,24 +3,17 @@
 use warnings;
 use strict;
 
-sub pars
-{
-    my $file = $_[0];
+my $filename = fasta.txt;
 
-    open(FASTA,"<","$file") or die "Couldn't open $file: $!" ;
+open(FASTA,"<","$filename") or die "Couldn't open $filename: $!" ;
 
-    while (<FASTA>)
-    { 
-	my $line = $_ ;
-	if ($line~=/^>(\w+)\s(\w+)/)
-	{
-	    $1 = 
-	}
-    };
-
-    close FASTA or die "Couldn't close $file: $!" ;
-
+while (<FASTA>)
+{ 
+    print "$_" ;
 }
+
+close FASTA or die "Couldn't close $filename: $!" ;
+
 
 
 
