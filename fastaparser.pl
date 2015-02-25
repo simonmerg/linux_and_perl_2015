@@ -3,28 +3,10 @@
 use warnings;
 use strict;
 
-my $filename = "fasta.txt";
-my %sequence = ();
-my $key = "";
+use fastaparser;
 
-open(FASTA,"<","$filename") or die "Couldn't open $filename: $!" ;
+my $filename="fasta.file";
 
-while (<FASTA>)
-{ 
-    if ($_=~/^>(\w+)\s\w+/)
-    {
-	$sequence{$1}="";
-	$key = $1;
-    }
-    else
-    {
-	$sequence{$key}=$sequence{$key}."$_" ;
-    }
-}
+my %sequences = fastaparser::parse_fasta_file($filename);
 
-foreach (keys %sequence)
-{
-    print "$_\t $sequence{$_} \n";
-}
 
-close FASTA or die "Couldn't close $filename: $!" ;
