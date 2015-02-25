@@ -11,7 +11,7 @@ sub new
 
 sub id
 {
-    my $self = $_[0];   
+    return 'ralph';
 }
 
 
