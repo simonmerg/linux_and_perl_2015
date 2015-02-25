@@ -9,4 +9,11 @@ sub new
     return $self;
 }
 
+sub id
+{
+    my $self = $_[0];   
+}
+
+
+
 1;
